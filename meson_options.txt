@@ -1,0 +1,7 @@
+option(
+  'tools',
+  type : 'array',
+  value : ['all'],
+  choices : ['all', 'svg2png', 'lottie2gif'],
+  description : 'CLI tools to build',
+)

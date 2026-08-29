@@ -1,0 +1,13 @@
+"svg2png":
+  - src/svg2png/**/*
+
+"lottie2gif":
+  - src/lottie2gif/**/*
+
+"documentation":
+  - README.md
+
+"infrastructure":
+  - .github/**/*
+  - meson.build
+  - meson_option.txt
