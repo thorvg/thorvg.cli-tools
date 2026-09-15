@@ -145,6 +145,7 @@ public:
         canvas->add(picture);
         canvas->draw(true);
         canvas->sync();
+        canvas->remove();
 
         //Build Png
         PngBuilder builder;
@@ -157,6 +158,7 @@ public:
 
     void terminate()
     {
+        canvas.reset();
         tvg::Initializer::term();
         free(buffer);
     }
@@ -171,6 +173,10 @@ private:
         //Initialize ThorVG Engine
         if (tvg::Initializer::init(threads) != tvg::Result::Success) {
             cout << "Error: Engine is not supported" << endl;
+            return;
+        }
+        if (tvg::Text::load(FONT_DIR"/PublicSans-Regular.ttf") != tvg::Result::Success) {
+            cerr << "Warning: Couldn't load the default font. Check the font path and enable ThorVG's TTF loader. Text may be missing." << endl;
         }
 
         //Create a Canvas
