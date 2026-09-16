@@ -158,7 +158,7 @@ public:
 
     void terminate()
     {
-        canvas.reset();
+        delete(canvas);
         tvg::Initializer::term();
         free(buffer);
     }
@@ -180,7 +180,7 @@ private:
         }
 
         //Create a Canvas
-        canvas = unique_ptr<tvg::SwCanvas>(tvg::SwCanvas::gen());
+        canvas = tvg::SwCanvas::gen();
     }
 
     void createBuffer(int w, int h)
@@ -195,7 +195,7 @@ private:
     }
 
 private:
-    unique_ptr<tvg::SwCanvas> canvas = nullptr;
+    tvg::SwCanvas* canvas = nullptr;
     uint32_t* buffer = nullptr;
     uint32_t bufferSize = 0;
 };
