@@ -34,7 +34,7 @@ meson install -C builddir
 
 ## Lottie to GIF
 
-> [!IMPORTANT] This tool requires ThorVG to be built with the **Lottie loader** and **GIF saver** enabled.
+> [!IMPORTANT] This tool requires ThorVG to be built with the **Lottie loader** and **GIF saver** enabled. The **TTF loader** is required to render text using the bundled default font.
 
 ThorVG provides an executable `tvg-lottie2gif` converter that generates a GIF file from a Lottie file.
 
@@ -63,7 +63,7 @@ Examples:
 
 ## SVG to PNG
 
-> [!IMPORTANT] This tool requires ThorVG to be built with the **SVG loader** enabled.
+> [!IMPORTANT] This tool requires ThorVG to be built with the **SVG loader** enabled. The **TTF loader** is required to render text using the bundled default font.
 
 ThorVG provides an executable `tvg-svg2png` converter that generates a PNG file from an SVG file.
 

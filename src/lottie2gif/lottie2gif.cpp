@@ -71,6 +71,9 @@ private:
    bool convert(string& in, string& out)
    {
       if (Initializer::init() != Result::Success) return false;
+      if (Text::load(FONT_DIR "/PublicSans-Regular.ttf") != Result::Success) {
+          cerr << "Warning: Couldn't load the default font. Check the font path and enable ThorVG's TTF loader. Text may be missing." << endl;
+      }
       {
          auto animation = Animation::gen();
          auto picture = animation->picture();
