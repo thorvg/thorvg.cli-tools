@@ -193,6 +193,7 @@ private:
                 convert(svgName);
             }
         }
+        closedir(dir);
 #endif
         return true;
     }
